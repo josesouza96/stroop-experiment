@@ -33,7 +33,7 @@ const TOTAL_TRIALS = 80;
 const PRACTICE_TRIALS = 5;
 
 // URL do Google Apps Script
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxejAMFb9CCxFTzR7udNidRcHHyZVgbrdX9LwpN9P3dCncGhVvFmnGof6wq4NW8tDCzWw/exec";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwTflRzizv3-41wffxIwlB_DeINYp3qQvqVhs7Zj5pZ6O6Y9iiNrr0irxMsnD0Z8q0W-A/exec";
 
 // URL do TCLE para download
 const TCLE_DOWNLOAD_URL = "https://drive.google.com/file/d/1zEszA8NnJIb2HpCGp-Nhj9VB3kx-hUq9/view?usp=sharing";
@@ -619,6 +619,7 @@ const App: React.FC = () => {
 };
 
 export default App;
+
 
 
 
