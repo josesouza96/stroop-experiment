@@ -239,7 +239,7 @@ const App: React.FC = () => {
             </h2>
             
             <div className="mb-6 space-y-2 text-center">
-              <p><strong>Projeto:</strong> "Geometria da interferência contextual em tarefa tipo Stroop: um único parâmetro θ"</p>
+              <p><strong>Projeto:</strong> "Geometria da interferência contextual em tarefa tipo Stroop: um único parâmetro θ resume a dinâmica"</p>
               <p><strong>Pesquisadores:</strong> Dr. Antônio Pereira Jr. e José Antônio Amador</p>
             </div>
 
@@ -619,3 +619,4 @@ const App: React.FC = () => {
 };
 
 export default App;
+
