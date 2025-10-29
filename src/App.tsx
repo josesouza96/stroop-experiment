@@ -236,7 +236,7 @@ const App: React.FC = () => {
             </h2>
             
             <div className="mb-6 space-y-2 text-center">
-              <p><strong>Projeto:</strong> "Geometria da interferência contextual em tarefa tipo Stroop: um único parâmetro θ"</p>
+              <p><strong>Projeto:</strong> "Geometria da interferência contextual em tarefa tipo Stroop: um único parâmetro θ resume a dinâmica"</p>
               <p><strong>Pesquisadores:</strong> Dr. Antônio Pereira Jr. e José Antônio Amador</p>
             </div>
 
@@ -327,35 +327,38 @@ const App: React.FC = () => {
             
             <div className="tcle-container">
               <h3 className="font-bold text-lg mb-3">INFORMAÇÕES SOBRE A PESQUISA</h3>
-              <p><strong>Título:</strong> Geometria da interferência contextual em tarefa tipo Stroop: um único parâmetro θ</p>
+              <p><strong>Título:</strong> Geometria da interferência contextual em tarefa tipo Stroop: um único parâmetro θ resume a dinâmica</p>
               <p><strong>Pesquisadores responsáveis:</strong> Dr. Antônio Pereira Jr. e José Antônio Amador</p>
               <p><strong>Instituição:</strong> Laboratório de Processamento de Sinais (LAPS), Instituto de Tecnologia (ITEC), Universidade Federal do Pará (UFPA)</p>
               
               <h3 className="font-bold text-lg mb-2 mt-4">OBJETIVO DA PESQUISA</h3>
-              <p>Esta pesquisa tem como objetivo investigar como a atenção se adapta durante uma tarefa tipo Stroop, medindo tempos de reação e precisão das respostas.</p>
+              <p>O estudo tem como objetivo investigar como a atenção e o controle cognitivo se adaptam ao longo do tempo em uma tarefa tipo Stroop, avaliando se um parâmetro geométrico simples (chamado θ) pode representar de forma confiável essa adaptação.</p>
               
               <h3 className="font-bold text-lg mb-2 mt-4">PROCEDIMENTOS</h3>
-              <p>Você participará de uma tarefa computadorizada onde verá palavras coloridas na tela e deverá indicar se a cor da tinta corresponde ao significado da palavra. A tarefa durará aproximadamente 15 minutos.</p>
+              <p>Você participará de uma tarefa computadorizada onde verá palavras coloridas na tela e deverá indicar se a cor da tinta corresponde ao significado da palavra. A tarefa durará aproximadamente 10 minutos.</p>
               
               <h3 className="font-bold text-lg mb-2 mt-4">RISCOS E BENEFÍCIOS</h3>
-              <p>Os riscos são mínimos, podendo incluir leve fadiga visual. Não há benefícios diretos, mas sua participação contribui para o avanço do conhecimento científico em neurociência cognitiva.</p>
+              <p>Os riscos são mínimos, podendo incluir leve fadiga visual ou mental devido à concentração necessária durante a tarefa. Não há benefícios diretos, mas sua participação contribui para o avanço do conhecimento científico em neurociência cognitiva.</p>
               
               <h3 className="font-bold text-lg mb-2 mt-4">CONFIDENCIALIDADE</h3>
-              <p>Seus dados são completamente anônimos. Apenas um código pseudonimizado será usado para identificar suas respostas. Nenhuma informação pessoal será coletada ou armazenada.</p>
+              <p>Seus dados são completamente anônimos. Apenas um código pseudonimizado será usado para identificar suas respostas. Nenhuma informação pessoal será coletada ou armazenada. Todos os dados serão tratados de forma sigilosa e anônima, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018).</p>
               
               <h3 className="font-bold text-lg mb-2 mt-4">PARTICIPAÇÃO VOLUNTÁRIA</h3>
-              <p>Sua participação é voluntária. Você pode desistir a qualquer momento sem prejuízo algum. Para solicitar a exclusão de seus dados, entre em contato informando seu código de participante.</p>
+              <p>Sua participação é voluntária. Você pode desistir a qualquer momento sem prejuízo algum. Para solicitar a exclusão de seus dados, entre em contato informando seu código de participante fornecido.</p>
               
               <h3 className="font-bold text-lg mb-2 mt-4">CONTATO</h3>
-              <p>Para dúvidas ou solicitações, entre em contato com o LAPS/UFPA através dos canais oficiais da universidade.</p>
+              <p>Para dúvidas ou solicitações, entre em contato com os pesquisadores responsáveis:</p>
+              <p>E-mail: <strong>apereira@ufpa.br</strong> ou <strong>jose.amador@ntpc.ufpa.br</strong></p>
+              <p>Telefone: (91) 3201-7426</p>
             </div>
 
             <div className="mt-6">
               <p className="text-center font-medium mb-4">
-                <strong>Ao clicar em "Li e aceito participar", você confirma que:</strong>
+                <strong>Ao clicar em "Tenho 18 anos ou mais e li e aceito participar", você confirma que:</strong>
               </p>
               <ul className="instructions-list text-sm">
                 <li>Leu e compreendeu as informações sobre a pesquisa</li>
+                <li>Tem 18 anos de idade ou mais</li>
                 <li>Teve oportunidade de fazer perguntas</li>
                 <li>Concorda voluntariamente em participar</li>
                 <li>Entende que pode desistir a qualquer momento</li>
@@ -367,7 +370,7 @@ const App: React.FC = () => {
               onClick={() => setPhase('instructions')}
             >
               <CheckCircle className="mr-2" size={20} />
-              Li e aceito participar da pesquisa
+              Tenho 18 anos ou mais e li e aceito participar da pesquisa
             </button>
           </div>
         );
@@ -585,7 +588,7 @@ const App: React.FC = () => {
       </div>
       
       <footer className="footer">
-        <p>Pesquisa aprovada pelo Comitê de Ética em Pesquisa da UFPA.</p>
+        <p>Pesquisa aprovada pelo Comitê de Ética em Pesquisa da UFPA sob parecer nº xxxxxx.</p>
         <p>Laboratório de Processamento de Sinais (LAPS) – Instituto de Tecnologia (ITEC) – UFPA, 2025.</p>
       </footer>
     </div>
@@ -593,6 +596,7 @@ const App: React.FC = () => {
 };
 
 export default App;
+
 
 
 
