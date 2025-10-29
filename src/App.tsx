@@ -33,7 +33,7 @@ const TOTAL_TRIALS = 80;
 const PRACTICE_TRIALS = 5;
 
 // URL do Google Apps Script - SUBSTITUA PELA SUA URL
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw3xkGUUkhRdOkKnbYoncexvD_1aj73bAmoXO1Cxq7KO_pqYlOx-zupwNO5aUWtFQBK/exec";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzOE2EKriyQE-PtLUArb_3dxu05KiUZ24D58BHa9Q5HYyhlhs6UlYqEun_-pVyHAtCm/exec";
 
 const App: React.FC = () => {
   // Estados do experimento
@@ -593,4 +593,5 @@ const App: React.FC = () => {
 };
 
 export default App;
+
 
