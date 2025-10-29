@@ -361,6 +361,7 @@ const App: React.FC = () => {
                 <li>Tem 18 anos de idade ou mais</li>
                 <li>Teve oportunidade de fazer perguntas</li>
                 <li>Concorda voluntariamente em participar</li>
+                <li>Autoriza o uso de seus dados anonimizados para fins científicos</li>
                 <li>Entende que pode desistir a qualquer momento</li>
               </ul>
             </div>
@@ -565,6 +566,25 @@ const App: React.FC = () => {
                   <em>Guarde este código caso precise solicitar a exclusão dos seus dados.</em>
                 </p>
               </div>
+              
+              {/* Novo botão para download do TCLE */}
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6 mb-6">
+                <p className="font-medium text-blue-800 mb-3">
+                  📄 <strong>Termo de Consentimento</strong>
+                </p>
+                <p className="text-blue-700 text-sm mb-3">
+                  Baixe uma cópia do TCLE para seus registros:
+                </p>
+                <a
+                  href={https://drive.google.com/file/d/1zEszA8NnJIb2HpCGp-Nhj9VB3kx-hUq9/view?usp=drive_link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200"
+                >
+                  <Download className="mr-2" size={16} />
+                  Baixar TCLE (PDF)
+                </a>
+              </div>
 
               <button
                 className="button-primary mt-6"
@@ -596,6 +616,7 @@ const App: React.FC = () => {
 };
 
 export default App;
+
 
 
 
