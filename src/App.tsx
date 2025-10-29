@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
-import {ChevronRight, Rocket, CheckCircle, AlertCircle} from 'lucide-react';
+import {ChevronRight, Rocket, CheckCircle, AlertCircle, Download} from 'lucide-react';
 
 // Tipos TypeScript
 interface TrialData {
@@ -239,7 +239,7 @@ const App: React.FC = () => {
             </h2>
             
             <div className="mb-6 space-y-2 text-center">
-              <p><strong>Projeto:</strong> "Geometria da interferência contextual em tarefa tipo Stroop: um único parâmetro θ resume a dinâmica"</p>
+              <p><strong>Projeto:</strong> "Geometria da interferência contextual em tarefa tipo Stroop: um único parâmetro θ"</p>
               <p><strong>Pesquisadores:</strong> Dr. Antônio Pereira Jr. e José Antônio Amador</p>
             </div>
 
@@ -569,7 +569,7 @@ const App: React.FC = () => {
                   <em>Guarde este código caso precise solicitar a exclusão dos seus dados.</em>
                 </p>
               </div>
-              
+
               {/* Novo botão para download do TCLE */}
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6 mb-6">
                 <p className="font-medium text-blue-800 mb-3">
@@ -619,9 +619,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-
-
-
-
-
-
