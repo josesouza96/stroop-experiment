@@ -32,7 +32,7 @@ const COLOR_NAMES = {
 const TOTAL_TRIALS = 80;
 const PRACTICE_TRIALS = 5;
 
-// URL do Google Apps Script - SUBSTITUA PELA SUA URL
+// URL do Google Apps Script
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxejAMFb9CCxFTzR7udNidRcHHyZVgbrdX9LwpN9P3dCncGhVvFmnGof6wq4NW8tDCzWw/exec";
 
 // URL do TCLE para download
@@ -619,6 +619,7 @@ const App: React.FC = () => {
 };
 
 export default App;
+
 
 
 
