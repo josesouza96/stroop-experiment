@@ -35,6 +35,9 @@ const PRACTICE_TRIALS = 5;
 // URL do Google Apps Script - SUBSTITUA PELA SUA URL
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxejAMFb9CCxFTzR7udNidRcHHyZVgbrdX9LwpN9P3dCncGhVvFmnGof6wq4NW8tDCzWw/exec";
 
+// URL do TCLE para download
+const TCLE_DOWNLOAD_URL = "https://drive.google.com/file/d/1zEszA8NnJIb2HpCGp-Nhj9VB3kx-hUq9/view?usp=sharing";
+
 const App: React.FC = () => {
   // Estados do experimento
   const [phase, setPhase] = useState<'welcome' | 'code' | 'consent' | 'instructions' | 'practice' | 'experiment' | 'finish'>('welcome');
@@ -576,7 +579,7 @@ const App: React.FC = () => {
                   Baixe uma cópia do TCLE para seus registros:
                 </p>
                 <a
-                  href={https://drive.google.com/file/d/1zEszA8NnJIb2HpCGp-Nhj9VB3kx-hUq9/view?usp=drive_link}
+                  href={TCLE_DOWNLOAD_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200"
@@ -616,7 +619,6 @@ const App: React.FC = () => {
 };
 
 export default App;
-
 
 
 
