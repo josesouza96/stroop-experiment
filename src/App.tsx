@@ -32,7 +32,7 @@ const COLOR_NAMES = {
 const TOTAL_TRIALS = 80;
 const PRACTICE_TRIALS = 5;
 
-// URL do Google Apps Script (substitua pela sua)
+// URL do Google Apps Script - SUBSTITUA PELA SUA URL
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/SEU_LINK_AQUI/exec";
 
 const App: React.FC = () => {
@@ -47,6 +47,8 @@ const App: React.FC = () => {
   const [experimentData, setExperimentData] = useState<TrialData[]>([]);
   const [startTime, setStartTime] = useState(0);
   const [isPractice, setIsPractice] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   // Gerar código do participante
   const generateParticipantCode = (first: string, last: string): string => {
@@ -102,55 +104,36 @@ const App: React.FC = () => {
 
   // Enviar dados para Google Sheets
   const sendDataToGoogleSheets = async (data: TrialData[]) => {
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
     try {
+      console.log('Enviando dados para Google Sheets...', data.length, 'trials');
+      
       const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
+        mode: 'no-cors', // Importante para Google Apps Script
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
+          participantId: participantId,
           data: data,
-          timestamp: new Date().toISOString()
+          timestamp: new Date().toISOString(),
+          totalTrials: data.length
         })
       });
 
-      if (!response.ok) {
-        throw new Error('Falha no envio');
-      }
-
       console.log('Dados enviados com sucesso!');
+      setSubmitStatus('success');
       return true;
     } catch (error) {
       console.error('Erro ao enviar dados:', error);
-      downloadCSV(data);
+      setSubmitStatus('error');
       return false;
+    } finally {
+      setIsSubmitting(false);
     }
-  };
-
-  // Download CSV como backup
-  const downloadCSV = (data: TrialData[]) => {
-    const headers = ['participant_id', 'trial_index', 'word', 'color', 'congruent', 'reaction_time', 'accuracy', 'timestamp'];
-    const csvContent = [
-      headers.join(','),
-      ...data.map(row => [
-        row.participantId,
-        row.trialIndex,
-        row.word,
-        COLOR_NAMES[row.color as keyof typeof COLOR_NAMES],
-        row.congruent ? 'congruente' : 'incongruente',
-        row.reactionTime,
-        row.accuracy ? 1 : 0,
-        row.timestamp
-      ].join(','))
-    ].join('\n');
-
-    const blob = new Blob([csvContent], { type: 'text/csv' });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `stroop_data_${participantId}_${new Date().toISOString().split('T')[0]}.csv`;
-    a.click();
-    window.URL.revokeObjectURL(url);
   };
 
   // Manipular resposta do trial
@@ -187,11 +170,16 @@ const App: React.FC = () => {
         setCurrentTrial(0);
       } else {
         setPhase('finish');
-        // Enviar dados quando terminar
-        sendDataToGoogleSheets(experimentData);
       }
     }
   };
+
+  // Enviar dados quando terminar o experimento
+  useEffect(() => {
+    if (phase === 'finish' && experimentData.length > 0) {
+      sendDataToGoogleSheets(experimentData);
+    }
+  }, [phase, experimentData]);
 
   // Manipuladores de teclado
   useEffect(() => {
@@ -526,14 +514,38 @@ const App: React.FC = () => {
                 Fim da Tarefa
               </h2>
               
-              <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
-                <p className="text-lg font-medium text-green-800 mb-2">
-                  ✅ Obrigado por participar!
-                </p>
-                <p className="text-green-700">
-                  Seus dados foram enviados com sucesso.
-                </p>
-              </div>
+              {isSubmitting && (
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-2"></div>
+                  <p className="text-lg font-medium text-blue-800">
+                    Enviando dados...
+                  </p>
+                </div>
+              )}
+
+              {submitStatus === 'success' && (
+                <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
+                  <CheckCircle className="mx-auto mb-2 text-green-600" size={32} />
+                  <p className="text-lg font-medium text-green-800 mb-2">
+                    ✅ Dados enviados com sucesso!
+                  </p>
+                  <p className="text-green-700">
+                    Seus resultados foram registrados na planilha.
+                  </p>
+                </div>
+              )}
+
+              {submitStatus === 'error' && (
+                <div className="bg-red-50 border border-red-200 rounded-lg p-6 mb-6">
+                  <AlertCircle className="mx-auto mb-2 text-red-600" size={32} />
+                  <p className="text-lg font-medium text-red-800 mb-2">
+                    ⚠️ Erro no envio dos dados
+                  </p>
+                  <p className="text-red-700">
+                    Verifique sua conexão ou entre em contato com os pesquisadores.
+                  </p>
+                </div>
+              )}
 
               <p className="mb-4">
                 Sua participação é muito importante para o avanço da pesquisa em neurociência cognitiva.
