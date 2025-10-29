@@ -1,6 +1,6 @@
 
 // Configuração da URL do Google Apps Script para envio de dados
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxejAMFb9CCxFTzR7udNidRcHHyZVgbrdX9LwpN9P3dCncGhVvFmnGof6wq4NW8tDCzWw/exec";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwTflRzizv3-41wffxIwlB_DeINYp3qQvqVhs7Zj5pZ6O6Y9iiNrr0irxMsnD0Z8q0W-A/exec";
 
 // Variáveis globais do experimento
 let participantId = '';
@@ -379,6 +379,7 @@ timeline.push(finish);
 
 // Executar o experimento
 jsPsych.run(timeline);
+
 
 
 
