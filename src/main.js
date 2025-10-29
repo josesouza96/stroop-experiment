@@ -146,7 +146,7 @@ const welcome = {
     html: `
         <h1>Bem-vindo(a) ao Estudo sobre Atenção e Controle Cognitivo</h1>
         <h2>LAPS/UFPA</h2>
-        <p><strong>Projeto:</strong> "Geometria da interferência contextual em tarefa tipo Stroop: um único parâmetro θ"</p>
+        <p><strong>Projeto:</strong> "Geometria da interferência contextual em tarefa tipo Stroop: um único parâmetro θ resume a dinâmica"</p>
         <p><strong>Pesquisadores:</strong> Dr. Antônio Pereira Jr. e José Antônio Amador</p>
         <p>Esta pesquisa é <strong>completamente anônima</strong>. Para gerar seu código de identificação, preencha os campos abaixo:</p>
         
@@ -192,7 +192,7 @@ const tcle = {
         <h2>Termo de Consentimento Livre e Esclarecido (TCLE)</h2>
         <div class="tcle-container">
             <h3>INFORMAÇÕES SOBRE A PESQUISA</h3>
-            <p><strong>Título:</strong> Geometria da interferência contextual em tarefa tipo Stroop: um único parâmetro θ</p>
+            <p><strong>Título:</strong> Geometria da interferência contextual em tarefa tipo Stroop: um único parâmetro θ resume a dinâmica</p>
             <p><strong>Pesquisadores responsáveis:</strong> Dr. Antônio Pereira Jr. e José Antônio Amador</p>
             <p><strong>Instituição:</strong> Laboratório de Processamento de Sinais (LAPS), Instituto de Tecnologia (ITEC), Universidade Federal do Pará (UFPA)</p>
             
@@ -200,7 +200,7 @@ const tcle = {
             <p>Esta pesquisa tem como objetivo investigar como a atenção se adapta durante uma tarefa tipo Stroop, medindo tempos de reação e precisão das respostas.</p>
             
             <h3>PROCEDIMENTOS</h3>
-            <p>Você participará de uma tarefa computadorizada onde verá palavras coloridas na tela e deverá indicar se a cor da tinta corresponde ao significado da palavra. A tarefa durará aproximadamente 15 minutos.</p>
+            <p>Você participará de uma tarefa computadorizada onde verá palavras coloridas na tela e deverá indicar se a cor da tinta corresponde ao significado da palavra. A tarefa durará aproximadamente 10 minutos.</p>
             
             <h3>RISCOS E BENEFÍCIOS</h3>
             <p>Os riscos são mínimos, podendo incluir leve fadiga visual. Não há benefícios diretos, mas sua participação contribui para o avanço do conhecimento científico em neurociência cognitiva.</p>
@@ -212,17 +212,20 @@ const tcle = {
             <p>Sua participação é voluntária. Você pode desistir a qualquer momento sem prejuízo algum. Para solicitar a exclusão de seus dados, entre em contato informando seu código de participante.</p>
             
             <h3>CONTATO</h3>
-            <p>Para dúvidas ou solicitações, entre em contato com o LAPS/UFPA através dos canais oficiais da universidade.</p>
+            <p>Para dúvidas ou solicitações, entre em contato com o pesquisadores responsáveis:</p>
+            <p>E-mail: <strong>apereira@ufpa.br<strong> ou <strong>jose.amador@ntpc.ufpa.br<strong></p>
+            <p>Telefone: (91) 3201-7426</p>
         </div>
-        <p><strong>Ao clicar em "Li e aceito participar", você confirma que:</strong></p>
+        <p><strong>Ao clicar em "Tenho mais de 18 anos e Li e aceito participar", você confirma que:</strong></p>
         <ul style="text-align: left; margin: 20px auto; max-width: 500px;">
             <li>Leu e compreendeu as informações sobre a pesquisa</li>
+            <li>Tem mais de 18 anos de idade</li>
             <li>Teve oportunidade de fazer perguntas</li>
             <li>Concorda voluntariamente em participar</li>
             <li>Entende que pode desistir a qualquer momento</li>
         </ul>
     `,
-    choices: ['Li e aceito participar da pesquisa'],
+    choices: ['Tenho mais de 18 anos e Li e aceito participar da pesquisa'],
     button_html: '<button class="jspsych-btn main-button">%choice%</button>',
     on_finish: function() {
         consentAccepted = true;
@@ -376,5 +379,6 @@ timeline.push(finish);
 
 // Executar o experimento
 jsPsych.run(timeline);
+
 
 
