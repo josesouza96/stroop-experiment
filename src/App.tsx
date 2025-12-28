@@ -576,7 +576,7 @@ const App: React.FC = () => {
                   📄 <strong>Termo de Consentimento</strong>
                 </p>
                 <p className="text-blue-700 text-sm mb-3">
-                  Baixe uma cópia do TCLE para seus registros:
+                  Se preferir, baixe uma cópia do TCLE para seus registros:
                 </p>
                 <a
                   href={TCLE_DOWNLOAD_URL}
@@ -611,7 +611,7 @@ const App: React.FC = () => {
       </div>
       
       <footer className="footer">
-        <p>Pesquisa aprovada pelo Comitê de Ética em Pesquisa da UFPA sob parecer nº xxxxxx.</p>
+        <p>Pesquisa aprovada pelo Comitê de Ética em Pesquisa da UFPA sob parecer nº <strong>8.085.208</strong>.</p>
         <p>Laboratório de Processamento de Sinais (LAPS) – Instituto de Tecnologia (ITEC) – UFPA, 2025.</p>
       </footer>
     </div>
@@ -619,4 +619,5 @@ const App: React.FC = () => {
 };
 
 export default App;
+
 
