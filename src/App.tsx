@@ -235,12 +235,12 @@ const App: React.FC = () => {
               Bem-vindo(a) ao Estudo sobre Atenção e Controle Cognitivo
             </h1>
             <h2 className="text-xl md:text-2xl text-center mb-6 text-blue-600 font-semibold">
-              LAPS/UFPA
+              Laboratório de Processamento de Sinais (LaPS) - ITEC/UFPA
             </h2>
             
             <div className="mb-6 space-y-2 text-center">
-              <p><strong>Projeto:</strong> "Geometria da interferência contextual em tarefa tipo Stroop: um único parâmetro θ resume a dinâmica"</p>
-              <p><strong>Pesquisadores:</strong> Dr. Antônio Pereira Jr. e José Antônio Amador</p>
+              <p><strong>Pesquisa:</strong> "Geometria da interferência contextual em tarefa tipo Stroop: um único parâmetro θ resume a dinâmica"</p>
+              <p><strong>Pesquisadores:</strong> Dr. Antônio Pereira Júnior (LaPS/ITEC) e José Antônio Amador (PPGNC/NTPC)</p>
             </div>
 
             <div className="highlight-box">
@@ -619,5 +619,6 @@ const App: React.FC = () => {
 };
 
 export default App;
+
 
 
