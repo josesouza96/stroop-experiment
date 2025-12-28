@@ -1,6 +1,6 @@
 # 🧠 Experimento Stroop - LAPS/UFPA
 
-## Geometria da interferência contextual em tarefa tipo Stroop: um único parâmetro θ
+## Geometria da interferência contextual em tarefa tipo Stroop: um único parâmetro θ resume a dinâmica
 
 [![Deploy](https://github.com/josesouza96/stroop-experiment/actions/workflows/static.yml/badge.svg)](https://github.com/josesouza96/stroop-experiment/actions/workflows/static.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
