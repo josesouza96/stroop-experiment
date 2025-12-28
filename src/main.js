@@ -145,9 +145,9 @@ const welcome = {
     type: jsPsychSurveyHtmlForm,
     html: `
         <h1>Bem-vindo(a) ao Estudo sobre Atenção e Controle Cognitivo</h1>
-        <h2>Laboratório de Processamento de Sinais - ITEC/UFPA</h2>
+        <h2>Laboratório de Processamento de Sinais (LaPS) - ITEC/UFPA</h2>
         <p><strong>Pesquisa:</strong> "Geometria da interferência contextual em tarefa tipo Stroop: um único parâmetro θ resume a dinâmica"</p>
-        <p><strong>Pesquisadores:</strong> Dr. Antônio Pereira Júnior (LaPS/ITEC) e José Antônio Amador (PPGNC/NTPC)</p>
+        <p><strong>Pesquisadores:</strong> Dr. Antônio Pereira Júnior e José Antônio Amador</p>
         <p>Esta pesquisa é <strong>completamente anônima</strong>. Para gerar seu código de identificação, preencha os campos abaixo:</p>
         
         <div class="form-group">
@@ -379,6 +379,7 @@ timeline.push(finish);
 
 // Executar o experimento
 jsPsych.run(timeline);
+
 
 
 
