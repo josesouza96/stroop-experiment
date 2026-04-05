@@ -29,7 +29,7 @@ const COLOR_NAMES = {
   green: 'VERDE',
   blue: 'AZUL'
 };
-const TOTAL_TRIALS = 80;
+const TOTAL_TRIALS = 100;
 const PRACTICE_TRIALS = 5;
 
 // URL do Google Apps Script
